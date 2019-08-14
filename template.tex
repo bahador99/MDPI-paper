@@ -810,7 +810,7 @@ Let  $p(x,t;\tau)$ denote the age distribution of nanoparticles in solution at p
 \end{equation*}
 is the fraction of nanoparticles having age in the interval $[\tau, \tau+\Delta\tau]$  at position $x$ and at time $t$. Thus $p(x,t;\tau)\geq 0$ and $\int_{0}^{\infty}{p(x,t;\tau)d\tau}=1$ . In case all nanoparticles at a location have aged more than a maximal age $T_1$, the age where maximal gel strength can be achieved, the age profile is given by the delta function $\delta(\tau-T_1)$. The age distribution of adsorbed nanoparticles at position $x$ at time $t$ is similarly given by $q(x,t;\tau)$. Thus, the total concentration of nanoparticles per bulk volume of age  $[\tau, \tau+\Delta\tau]$ at position $x$ at time $t$ is
 \begin{equation}
-    \left(p(x,t;\tau)C_n(x,t)\phi^{(i)}S_w(x,t)+q(x,t;\tau)C_{an}\left(C_n(x,t)\right)(1-\phi^{(n)})\rho_r\right)\Delta\tau
+    \left(p(x,t;\tau)C_n(x,t)\phi^{(n)}S_w(x,t)+q(x,t;\tau)C_{an}\left(C_n(x,t)\right)(1-\phi^{(n)})\rho_r\right)\Delta\tau
 \end{equation}
 The flux of nanoparticles of this age is
 \begin{equation}
@@ -835,7 +835,7 @@ The interpolator (signifying degree of gelling) is given by
 \begin{equation} \label{eq:ageEffect} % eq 5.8
     \nu=h(C_n,C_p) \int^{T_1}_{0}m(\tau)p(x,t;\tau)d\tau
 \end{equation}
-where $h(C_n,C_p)$ is a tabulated function, and $m(\tau)$ a weight function defining how the age of the nanoparticles influence gel strength. The (normalized) function $m(\tau), \tau\in[0,T_1]$, measures the increase in water viscosity (that is interpolator value) as a function of nanoparticle aging. Typically $m(\tau)=0$ for $\tau\in[0,T_0]$,  $m^\prime(\tau)>0$ for $\tau\in\langle T_0, T_1\rangle$ , and $m(T_1)=1$ as illustrated in Figure \ref{fig:weightFunc}.
+where $h(C_n,C_p)$ is a tabulated function, and $m(\tau)$ a weight function defining how the age of the nanoparticles influences gel strength. The (normalized) function $m(\tau), \tau\in[0,T_1]$, measures the increase in water viscosity (that is interpolator value) as a function of nanoparticle aging. Typically $m(\tau)=0$ for $\tau\in[0,T_0]$,  $m^\prime(\tau)>0$ for $\tau\in\langle T_0, T_1\rangle$ , and $m(T_1)=1$ as illustrated in Figure \ref{fig:weightFunc}.
 
 \begin{figure}[h]
     \centering
