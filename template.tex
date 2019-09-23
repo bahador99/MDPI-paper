@@ -131,7 +131,7 @@ Torleif Holt $^{3}$
 $^{1}$ \quad Dept. of Geoscience and Petroleum, Norwegian University of Science and Technology; ole.torsater@ntnu.no\\
 $^{2}$ \quad Dept. of Mathematical Sciences, Norwegian University of Science and Technology; dag.wessel-berg@ntnu.no\\
 $^{3}$ \quad Petroleum Department, SINTEF Industry, NO-7465 Trondheim, Norway; torleif.holt@sintef.no (T.H.); per.bergmo@sintef.no (P.E.B.)\\
-$^{3}$ \quad Materials and Nanotechnology Department, SINTEF Industry, NO-0373 Oslo, Norway; christian.r.simon@sintef.no (C.R.S.); juan.yang@sintef.no (J.Y.)\\
+$^{4}$ \quad Materials and Nanotechnology Department, SINTEF Industry, NO-0373 Oslo, Norway; christian.r.simon@sintef.no (C.R.S.); juan.yang@sintef.no (J.Y.)\\
 }
 
 % Contact information of the corresponding author
@@ -149,7 +149,11 @@ $^{3}$ \quad Materials and Nanotechnology Department, SINTEF Industry, NO-0373 O
 %\conference{} % An extended version of a conference paper
 
 % Abstract (Do not insert blank lines, \textit{i.e.} \\) 
-\abstract{Deep placement of gel in water flooded hydrocarbon reservoirs may block channels with high water flow and divert the water into other parts of the reservoir resulting in higher oil production.  In order to get the gel constituents to the right reservoir depths, a delay in the gelling time in the order of weeks at elevated temperatures will be necessary. In this work, a methodology for controlled gelation of partially hydrolyzed polyacrylamide (HPAM) using hybrid nanomaterials with functional groups as crosslinkers was developed. Two delay mechanisms with hybrid materials and polyelectrolyte complexes (PEC) were designed and tested. Both mechanisms could significantly delay the gelation rate, giving gelling times ranging from several days to several weeks in synthetic sea water at 80~\celsius. A numerical model of 1D two-phase flow has been developed and tested with results from the core flooding experiments with polymer and deactivated nanomaterial. The model can track the age distribution of  the  nanomaterial throughout the porous medium. The model generated a good fit of experimental results.}
+\abstract{Deep placement of gel in waterflooded hydrocarbon reservoirs may block channels with high water flow and divert the water into other parts of the reservoir resulting in higher oil production.  In order to get the gel constituents to the right reservoir depths, a delay in the gelling time in the order of weeks at elevated temperatures will be necessary. In this work, a methodology for controlled gelation of partially hydrolyzed polyacrylamide using hybrid nanomaterials with functional groups as crosslinkers was developed. Two delay mechanisms with hybrid materials and polyelectrolyte complexes were designed and tested. Both mechanisms could significantly delay the gelation rate, giving gelling times ranging from several days to several weeks in synthetic sea water at 80~\celsius. 
+Gelling experiments in sandstone cores showed that gel strength increased with aging time. For long aging times, strong gels were formed which resulted in almost no water permeability.
+A series of coreflooding experiments with polymer and deactivated nanomaterial were performed. In addition to differential pressures and concentration profiles, the experiments enabled calculation of retention and inaccessible pore volumes. 
+A novel numerical model of 1D two-phase flow has been developed and tested with results from core flooding experiments. The model can track the age distribution and concentrations of the nanomaterial (and therefore water viscosity) throughout the porous medium at every time step. 
+The model generated a good fit of experimental results.}
 
 % Keywords
 \keyword{functional nanomaterials; porous media; enhanced oil recovery; delayed gelation; polyelectrolyte complexes}
@@ -167,15 +171,15 @@ $^{3}$ \quad Materials and Nanotechnology Department, SINTEF Industry, NO-0373 O
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
-It is becoming more and more challenging to meet the ever-increasing demand for petroleum. Most of the existing major oilfields are already at a mature stage and the number of new significant discoveries per year is decreasing. Therefore, at this point in time, it is crucial to focus on methods of improving petroleum production from existing reservoirs. A big subset of such methods fall under the category of Enhanced Oil Recovery (EOR).
+It is becoming more and more challenging to meet the ever-increasing demand for petroleum. Most of the existing major oilfields are already at a mature stage and the number of new significant discoveries per year is decreasing \cite{BP2018}. Therefore, at this point in time, it is crucial to focus on methods of improving petroleum production from existing reservoirs. A big subset of such methods fall under the category of Enhanced Oil Recovery (EOR).
 
 Challenges and technology gaps within EOR, which need to be addressed in the coming research programs, have been identified in the OG21 strategy document on ``Exploration and Increased Recovery" \citep{OG21}: In particular, there is a need for more cost-efficient EOR chemicals, and to assure environmentally acceptable methods to avoid unwanted discharge to sea. Improved petroleum resource exploitation by EOR has also been given special attention in a report on increased recovery in the Norwegian Continental Shelf by the Norwegian Department of Oil and Energy \citep{Am2010}. There is therefore a clear need for increased competence in new technologies in the field of EOR. 
 
-There has recently been an increasing interest in applying nanotechnology to EOR but still many topics are uncovered. Nanotechnology, which has mainly been developed in mechanical engineering, medicine and biological sciences, is also expected to have a potential for EOR applications. This technology has a wide range of applications relevant to EOR, from employing general concepts and principles of nanotechnology, to advanced reservoir monitoring using nano-sensors and nano-analysis, to more specific technologies which make up for the shortcomings in traditional EOR methods \citep{Fletcher2010, Ayatollahi2012, Cocuzza2011}. The latter includes tailoring chemical molecules for more efficient EOR, as well as smart and more effective delivery of EOR agents. Technologies such as efficient drug delivery in the human body can possibly be applied to improve efficiency in chemical flooding.
+There has recently been an increasing interest in applying nanotechnology to EOR but still many topics are uncovered. Nanotechnology, which has mainly been developed in mechanical engineering, medicine and biological sciences \cite{Jain2007, Perret2016, Polat2017}, has also shown a potential for application in the oil and gas industry, from drilling \cite{Mohamadian2018, Krishnamoorti2015, Wasan2003, Esmaeili2011, Amanullah2011, VanZanten2010, Maserati2010, Hurnaus2015} to corrosion inhibition \cite{Murugesan2016, Jauhari2011} production operations \cite{Huang2008, Huang2015, Belcher2010, Habibi2011, Ogolo2012, Ahmadi2013} to EOR \cite{Li2013, Hendraningrat2014, Yu2010, Zargartalebi2015, Manan2015}. This technology has a wide range of applications relevant to EOR, from employing general concepts and principles of nanotechnology, to advanced reservoir monitoring using nano-sensors and nano-analysis, to more specific technologies which make up for the shortcomings in traditional EOR methods \citep{Fletcher2010, Ayatollahi2012, Cocuzza2011, Mo2014, Jia2019}. The latter includes tailoring chemical molecules for more efficient EOR, as well as smart and more effective delivery of EOR agents. Technologies such as efficient drug delivery in the human body can possibly be applied to improve efficiency in chemical flooding \cite{Cordova2008, Johnson2010}.
 
-This work was part of the HyGreGel (Hybrid Green nano-Gels) project carried out at SINTEF Industry and Norwegian University of Science and Technology. It addressed the need for more efficient water diversion techniques by improved in-depth placement of gelling chemicals to increase waterflood recovery and reduce unwanted water circulation in heterogeneous reservoirs. The project recognized the environmental challenges using chemicals and emphasizes the development of green chemical systems for such applications.
+This work was part of the HyGreGel (Hybrid Green nano-Gels) project carried out at SINTEF Industry and Norwegian University of Science and Technology. It addressed the need for more efficient water diversion techniques by improved in-depth placement of gelling chemicals to increase waterflood recovery and reduce unwanted water circulation in heterogeneous reservoirs. The project recognized the environmental challenges using chemicals and emphasizes the development of green chemical systems for such applications. However, mobility improvements due to gel injection (see \emph{e.g.,} \cite{Li2019}) was outside the scope of this work.  
 
-Incremental recovery from water diversion is generally expected to be merely 2\% above standard water flooding \citep{OG21}. The main objective of this work was thus to improve incremental recovery from water diversion by developing and testing innovative hybrid (polymer + nanomaterial) gels.
+Incremental recovery from water diversion is generally expected to be merely 2\% above standard waterflooding \citep{OG21}. Also, earlier work in the area of gel conformance control using nanomaterials for EOR has faced challenges in delaying the formation of gels \cite{Sydansk2000}. The main objective of this work was thus to improve incremental recovery from water diversion by developing and testing innovative hybrid (polymer + nanomaterial) gels with delayed gelation.
 
 \subsection{Hybrid materials for delayed gelation}
 Hybrid Organo-Silica (HOS) nanomaterials were used in this work. HOS nanomaterials, which are developed at  the  Department  of  Materials  and  Nanotechnology (DMN) at  SINTEF  Industry using a two-step synthesis process \citep{Mannle2011}, are nanoparticles with functional groups which can react with polymers causing cross-binding and gelling. Partially hydrolyzed polyacrylamide (HPAM)  was used as polymer, although the long-term objective was to use a more environmentally friendly polymer.
@@ -206,7 +210,7 @@ The first gelation tests at DMN with active HOS nanomaterial and polymer reveale
 Both types of HOS nanomaterials synthesized by DMN were tested in bulk conditions. Their reactivity was tested by measuring viscosity and gel formation as a function of time at 80~\celsius~ in synthetic sea water (SSW) at anaerobic conditions. Tested systems were kept in reaction vials and eventually the most promising system  was selected for \textit{in situ} gelling experiments.
     
 \subsection{Polyelectrolyte complexes for delayed gelation}
-As a second approach for delayed gelation, polyelectrolyte complexes (PEC) where used. PEC can be made by mixing a polycation with a polyanion. By incorporating a cross-binder into the polyelectrolyte complex a delayed gel formation can be obtained. In the original PEC recipe \ce{Cr^3+} was used as cross-binder. As active HOS nanomaterials are also polycations, the original polycation was replaced by active HOS. Initial tests indicated that this can be a viable approach.
+As a second approach for delayed gelation, polyelectrolyte complexes (PEC) were used. PEC can be made by mixing a polycation with a polyanion. By incorporating a cross-binder into the polyelectrolyte complex a delayed gel formation can be obtained. In the original PEC recipe \ce{Cr^3+} was used as cross-binder. As active HOS nanomaterials are also polycations, the original polycation was replaced by active HOS. Initial tests indicated that this can be a viable approach.
 
 A research group at Texas A\&M\footnote{The research was originally conducted at University of Kansas. However, since Professor Jenn-Tai Liang, one of the contributors to this project and HyGreGel, later moved to Texas A\&M University, we will call it a Texas A\&M recipe here.} has developed a technology to delay gelation of HPAM based on PEC and \ce{Cr^{3+}}. Only a few papers have been published on their results \citep{Cordova2008,Johnson2010}. Figure \ref{cht:jennTai} shows an example of a system with delayed gelation based on Texas A\&M technology. As shown in the figure, the viscosity of the solution only increased marginally for the first 50 days after preparation. Then after 50 days, a sudden viscosity increase was observed over a 10 day period.
 
@@ -220,10 +224,11 @@ A research group at Texas A\&M\footnote{The research was originally conducted at
 Samples of different basic systems were prepared for measurement of viscosity development with time. This included systems with only \ce{Cr^3+}-ions as crosslinker, systems based on the original Texas A\&M recipe \citep{Cordova2008} and systems with active HOS. HPAM polymers of different molecular weight were used.
     
 \subsection{Transport properties of nanomaterials and polymers in porous media}
-\citet{Lotsch1985} described the phenomena governing the transport of water additives in porous media, namely retention, adsorption and inaccessible pore volume (IPV). Based on this, several core flooding experiments were designed and conducted where deactivated HOS nanomaterial and polymer were injected both separately and in mixtures into two sets of sandstones, namely Berea and Bentheimer \citep{Najafiazar2016}. The results indicate that polymer adsorption, polymer retention and IPV were generally reduced by the presence of nanomaterials. Adsorption, total retention and IPV were significantly higher in Berea compared to Bentheimer, for both polymer and nanomaterials. Adsorbed or otherwise retained polymer during injection was not released during following water floods, while the retained nanomaterials were partly released during subsequent water floods. Nanomaterials had negligible effect on rock permeability, while polymer significantly reduced the permeability.
+\citet{Lotsch1985} described the phenomena governing the transport of water additives in porous media, namely retention, adsorption and inaccessible pore volume (IPV). Based on this, several core flooding experiments were designed and conducted where deactivated HOS nanomaterial and polymer were injected both separately and in mixtures into two sets of sandstones, namely Berea and Bentheimer \citep{Najafiazar2016}. The results indicate that polymer adsorption, polymer retention and IPV were generally reduced by the presence of nanomaterials. Adsorption, total retention and IPV were significantly higher in Berea compared to Bentheimer, for both polymer and nanomaterials. Adsorbed or otherwise retained polymer during injection was not released during following waterfloods, while the retained nanomaterials were partly released during subsequent waterfloods. Nanomaterials had negligible effect on rock permeability, while polymer significantly reduced the permeability.
 
 \subsection{Numerical model}
-A numerical model was developed and tested with results from the core flooding experiments with deactivated HOS nanomaterial and polymer. Simulations were also run using a synthetic data set where polymer viscosity depends on polymer concentration and the concentration and age of the injected nanomaterials (the time passed since injection).
+
+A novel numerical model that enables simulations of time dependent reactivity between polymer and crosslikner was developed. In the model, the viscosity of water depends on polymer concentration as well as age (the time passed since injection) and concentration of the nanomaterial. Such a functionality is not available in commercial simulators. The model was tested tested with results from the core flooding experiments with deactivated HOS nanomaterial and polymer. Simulations were also run using a synthetic data set.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimental}
@@ -361,14 +366,15 @@ The experiments were carried out in the setup shown in Figure \ref{fig:experimen
         \label{fig:experimentalSetup}
 \end{figure}
 
-The Bentheimer cores were initially characterized by measurement of porosity and permeability. From previous measurements on similar cores, the determined pore size distribution curve was symmetrical around 33 \micro m. Only 11 \% of the pore throats were less than 10 \micro m.
 
-% \begin{figure}[h!]
-%     \centering
-%     \includegraphics[width=.7\textwidth]{fig/poreSizeDist.png}
-%     \caption{Pore size distribution for Bentheimer sandstone}
-%     \label{cht:poreSizeDist}
-% \end{figure}
+The Bentheimer cores were initially characterized by measurement of porosity and permeability. From previous measurements on similar cores, a pore size distribution curve was determined based on mercury intrusion measurements as shown in Figure \ref{cht:poreSizeDist}. The curve was symmetrical around 33 \micro m, and only 11 \% of the pore throats were less than 10 \micro m.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.7\textwidth]{fig/poreSizeDist.png}
+    \caption{Pore size distribution for Bentheimer sandstone}
+    \label{cht:poreSizeDist}
+\end{figure}
 
 The first three experiments were conducted with increasing aging times for the chemical system in the core. For each experiment, the pore volume and absolute permeability was first measured. Then, the chemical system was injected, followed by aging. After aging, SSW was injected at 30 ml/hr (rate limit) but restricted by approximately 27 bar differential pressure. The experiments ended with a permeability measurement. During injection of the chemical system, samples of the produced fluid were taken early after breakthrough of the chemicals and at the end of the injection. The SSW injected prior to the polymer/nanomaterial solution was purged with argon and vacuum treated to remove oxygen from the solutions.
 
@@ -461,7 +467,7 @@ Figure \ref{cht:viscPolcModel} shows an example of a reaction model designed bas
 \end{figure}
 
 \subsubsection{In situ gelling experiments \label{sec:insiteGel}}
-Table \ref{tab:porPermAge} summarizes the initial absolute permeabilities of the cores used in the experiments, the permeabilities measured with SSW injection after the aging and the residual resistance factors (RRF), \textit{i.e.} the ratio between the two permeabilities. The resistance factor determined after seven days of aging was not much higher than the corresponding factor determined for polymer injection into Bentheimer sandstone \cite{Najafiazar2016}. As shown in Table \ref{tab:porPermAge}, the residual resistance factors increased with longer aging times.
+Table \ref{tab:porPermAge} summarizes the initial absolute permeabilities of the cores used in the experiments, the permeabilities measured with SSW injection after the aging and the residual resistance factors (RRF), \textit{i.e.} the ratio between the two permeabilities. The resistance factor determined after seven days of aging was not much higher than the corresponding factor determined for polymer injection into Bentheimer sandstone \cite{Najafiazar2016}. As shown in Table \ref{tab:porPermAge}, the residual resistance factors increased with longer aging times. In Experiment 5, a rigid gel with almost no water permeability was formed, explaining the very high RRF.
 %TAB
 \begin{table}[h!]
 \small
@@ -505,6 +511,17 @@ In Experiment 3, the gel almost blocked the core with a pressure gradient of 135
 It is evident that pH adjustment of the nanomaterial/polymer solution affected both the gelation rate and gel strength. The nanomaterial/polymer systems developed in the present project has proven the ability to delay gelation and form stable gels at harsh conditions. However, further work is needed in order to optimize the systems for use in practical applications. 
 
 \subsection{Numerical simulation}
+\subsubsection{Grid sensitivity}
+To investigate numerical dispersion, the simulator was tested with varying parameters for number of grid blocks. This was done for the case of nanoparticle injection in Bentheimer. The result of changing number of grid blocks is shown in Figure \ref{cht:simNPa}. For small number of grid blocks, the numerical dispersion is apparent as it smooths out the nanoparticle concentration response resulting in a too early breakthrough of the nanoparticles. At the same time, increasing the number of grid blocks increases the computation time. Therefore, it was decided to use 120 grid blocks as an optimum number. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.8\textwidth]{fig/simNPa.png}
+    \caption{Concentration of nanoparticles as function of injected solution. Sensitivity simulations varying number of grid blocks in the model}
+    \label{cht:simNPa}
+\end{figure}
+
+
 \subsubsection{Simulation of laboratory experiments}
 Several experiments to investigate the transport properties of nanomaterials and polymer in porous media has been reported earlier \cite{Najafiazar2016, Najafiazar2016a}. These experiments were performed and analyzed based on the descriptions of \citet{Lotsch1985} on phenomena governing the transport of water additives in porous media. The experimental setup shown in Figure \ref{fig:experimentalSetup} was used. The results from said experiments were simulated in order to quality test the developed simulator. Table \ref{tab:rockParams} summarizes the basic rock parameters and additives used in the experiments. High permeability Bentheimer and low permeability Berea were used as the rock system. 
 
@@ -719,7 +736,7 @@ With the given nanomaterial age function the gelling should start at after 30 da
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
-Deep placement of gel in water flooded oil reservoirs may block channels with high water flow and divert the water into other parts of the reservoir. In order to get the gel constituents to the right depths, a delay in the gelling time up to several weeks at elevated temperatures will be necessary. The objective of the HyGreGel project was to develop gel systems with delayed gelation based on innovative chemistry by taking nanomaterials into use. Furthermore, mechanisms for reaction and transport of the gel constituents were described which, in turn, enabled numerical modelling of deep gel placement.
+Deep placement of gel in waterflooded oil reservoirs may block channels with high water flow and divert the water into other parts of the reservoir. In order to get the gel constituents to the right depths, a delay in the gelling time up to several weeks at elevated temperatures will be necessary. The objective of the HyGreGel project was to develop gel systems with delayed gelation based on innovative chemistry by taking nanomaterials into use. Furthermore, mechanisms for reaction and transport of the gel constituents were described which, in turn, enabled numerical modelling of deep gel placement.
 
 A methodology for controlled gelation of partially hydrolyzed polyacrylamide (HPAM) using hybrid organo-silica nanomaterials with functional groups (HOS nanomaterials) as crosslinkers was developed. Several systems with different types of HOS nanomaterials were synthesized, characterized and tested. Both HOS nanomaterials with fully blocked reactive sites that were slowly activated by hydrolysis and partially deactivated HOS nanomaterials could significantly delay the gelation rate, giving gelling times ranging from several days to several weeks in SSW at 80~\celsius.
 
@@ -729,7 +746,7 @@ active HOS nanomaterials (which are also polycations), and dextran sulfate was r
 
 A gel system based on partially modified HOS nanomaterials was tested in core flooding experiments. The resistance to water flow increased with aging time, ultimately giving a very strong gel. The chemical system used had a severe injectivity problem which was solved by an improved treatment consisting of better filtering and reduced pH.
 
-A mathematical model of 1D two-phase flow with polymers and nanomaterials was developed, implemented and tested. The formulation includes tracking the age and concentration distribution of the nanomaterials. This means that at each position and time, the composition of the nanomaterials with respect to age and concentration are given. The age composition of the materials in solution in turn affects the nanomaterials ability to crosslink and form gel. Results from the core flooding experiments with deactivated HOS nanomaterials and polymer were used in the testing the model. The model generated a good fit of the experimental results. A good match was also achieved by comparing the results from the developed model with those of a commercial simulator, ECLIPSE. The developed model was then used to simulate gelation in two field scale cases.
+A mathematical model of 1D two-phase flow with polymers and nanomaterials was developed, implemented and tested. The formulation includes tracking the age and concentration distribution of the nanomaterials. This means that at each position and time, the composition of the nanomaterials with respect to age and concentration are given. The age composition of the materials in solution in turn affects the nanomaterials ability to crosslink and form gel. Results from the core flooding experiments with deactivated HOS nanomaterials and polymer were used in the testing the model. The model generated a good fit of the experimental results. A good match was also achieved by comparing the results from the developed model with those of a commercial simulator, ECLIPSE. The comparison did not included the time and concentration dependent gelling effects which are not included in ECLIPSE \cite{slb2015}.  The developed model was then used to simulate gelation in two field scale cases.
 
 A significant step towards enabling hybrid material technology as a next generation of chemical EOR has been taken through the HyGreGel project. However, within the frame of the present project it was not possible to follow all the topics involved in the technology to the end. Further research and development will be needed to optimize and improve the technology to the level needed for field testing. 
 
@@ -792,15 +809,15 @@ A significant step towards enabling hybrid material technology as a next generat
 We consider an immiscible two-phase (water and oil) 1D model with injection of nanomaterials and polymer in solution with water, where capillary and gravitational forces are ignored. We will assume that polymer and sufficiently old nanomaterials forms gel, increasing the water viscosity significantly. The boundary conditions are given by specifying an (time dependent) input rate. 
 
 \subsection{Conservation laws}
-Mass conservation for oil and water read
+Mass conservation for oil and water read \cite{Dake1978}
 \begin{equation} \label{eq:massConservation} % eq 5.1
     \phi\frac{\partial S_i}{\partial t}+\frac{\partial u_i}{\partial x} = 0,\quad i = o, w
 \end{equation}
-where $\phi$ is the constant porosity (porosity for oil and water), $S_i=S_i(x,t), i = o,w$ are the phase saturations and $u_i, i=o,w$ are the phase volumetric fluxes. These fluxes are given by Darcy’s law
+where $\phi$ is the constant porosity (porosity for oil and water), $S_i=S_i(x,t), i = o,w$ are the phase saturations and $u_i, i=o,w$ are the phase volumetric fluxes. These fluxes are given by Darcy’s law \cite{Dake1978}
 \begin{equation} \label{eq:fluxes} % eq 5.2
     u_i= -k\frac{k_{ri}}{\mu_i}\frac{\partial P}{\partial x},\quad i = o, w
 \end{equation}
-where $P=P(x,t)$  is the pressure and $k$ is the absolute permeability. Here absolute permeability is a tabulated function of absorbed polymer concentration. Furthermore, $k_{ri}, i = o, w$ are the relative permeabilities to oil and water, which are functions of water saturation. In the present formulation, these relative permeabilities are of Corey type
+where $P=P(x,t)$  is the pressure and $k$ is the absolute permeability. Here absolute permeability is a tabulated function of absorbed polymer concentration. Furthermore, $k_{ri}, i = o, w$ are the relative permeabilities to oil and water, which are functions of water saturation. In the present formulation, these relative permeabilities are of Corey type \cite{Brooks1964}
 \begin{subequations}
 \begin{eqnarray}
  k_{rw}(S_w)=k^0_{rw}(\frac{S_w-S_{wi}}{1-S_{wi}-S_{or}})^{\alpha_w} ,\\
@@ -840,7 +857,7 @@ The water viscosity with only polymer present is given by
 \begin{equation}
     \mu_w^p=\mu_w^0 a(C_p) s(C_p, q_w),
 \end{equation}
-where $\mu_w^0$ is the water viscosity with no polymer present, $a (C_p)$ is the viscosity increase factor due to presence of polymer with no shear-thinning, while $s(C_p, u_w)$ is the viscosity decrease factor due to shear thinning. Note that the shear-thinning factor $s(C_p, u_w)$ is calculated explicitly in the numerical formulation. The two functions $a (C_p)$ and $s(C_p, u_w)$ are tabulated input parameters and can either be measured directly or calculated from some type of assumed functional form. The approach for defining the water viscosity as a function of polymer concentration resembles the fully mixed case for the Todd-Longstaff formulation \citep{slb2015}.   
+where $\mu_w^0$ is the water viscosity with no polymer present, $a (C_p)$ is the viscosity increase factor due to presence of polymer with no shear-thinning, while $s(C_p, u_w)$ is the viscosity decrease factor due to shear thinning. Note that the shear-thinning factor $s(C_p, u_w)$ is calculated explicitly in the numerical formulation. The two functions $a (C_p)$ and $s(C_p, u_w)$ are tabulated input parameters and can either be measured directly or calculated from some type of assumed functional form. The approach for defining the water viscosity as a function of polymer concentration resembles the fully mixed case for the Todd-Longstaff formulation \citep{Todd1972}.   
 
 The interpolator (signifying degree of gelling) is given by
 \begin{equation} \label{eq:ageEffect} % eq 5.8
@@ -924,7 +941,7 @@ As the model presently allows only water to be injected, we have  $q_T^{n+1}=\fr
 \end{equation}
 for the $3n_x$ unknowns $S^{n+1}_{i}, C^{n+1}_{\textit{NM}, i}, C^{n+1}_{pol, i}, i=1,2,...,n_x$.
 
-Solving this set of non-linear equations requires use of Newton’s method for systems of equations, which again requires a new Jacobi matrix at each Newton iteration. The $3n_x \times 3n_x$   Jacobi matrix is sparse and block diagonal where the block matrices are generally $6\times6$  matrices. Due to this structure, Gauss-elimination does not destroy the sparse structure, and also the number of arithmetic operations in the Gauss-elimination only grow linearly with $n_x$. 
+This set of non-linear equations is solved using Newton's method for systems of equations. The $3n_x \times 3n_x$   Jacobi matrix is sparse and block diagonal where the block matrices are generally $6\times6$  matrices. Due to this structure, Gauss-elimination does not destroy the sparse structure, and also the number of arithmetic operations in the Gauss-elimination only grow linearly with $n_x$. 
 
 We will not write down the explicit formula for the Jacobi matrix as used in the computer code, but report that the Newton iteration shows excellent second order convergence using  $S^{n}_{i}, C^{n}_{\textit{NM}, i}, C^{n}_{pol, i}, i=1,2,...,n_x$   as initial guess in the iteration, which actually validates the expressions obtained and used for the various partial derivatives needed for forming the Jacobi matrix.
 
